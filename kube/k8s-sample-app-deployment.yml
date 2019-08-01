@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-sample-app
+  namespace: default
+  labels:
+    app: k8s-sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-sample-app
+  template:
+    metadata:
+      labels:
+        app: k8s-sample-app
+    spec:
+      containers:
+        - name: k8s-sample-app
+          image: kiwi1086/k8s-sample-app:latest
+          ports:
+            - containerPort: 80
+              name: http
