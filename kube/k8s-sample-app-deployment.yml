@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: k8s-sample-app
-          image: kiwi1086/k8s-sample-app:latest
+          image: kiwi1086/k8s-sample-app:$COMMIT_SHA1
           ports:
             - containerPort: 80
               name: http
